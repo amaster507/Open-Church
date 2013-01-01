@@ -1,0 +1,611 @@
+<XMLDiagram>
+  <TDBADiagramController Locked="0">
+    <Elements>
+      <TDBADiagramObject id="1" propertiesclass="TDiagramMetaTableProperties" objectname="users">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="40" top="110" width="140" height="90"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="2" propertiesclass="TDiagramMetaTableProperties" objectname="churches">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="530" top="110" width="160" height="70"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="3" propertiesclass="TDiagramMetaTableProperties" objectname="user_have_churches">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="210" top="110" width="170" height="80"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="4" propertiesclass="TDiagramForeignKeyProperties" objectname="user_have_churches.users_have_churches_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="80" top="80" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="295" y="150"/>
+                <Point x="110" y="154"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="5" propertiesclass="TDiagramForeignKeyProperties" objectname="user_have_churches.users_have_churches_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="96" top="96" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="295" y="150"/>
+                <Point x="620" y="150"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="6" propertiesclass="TDiagramMetaTableProperties" objectname="addresses">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="510" top="420" width="150" height="190"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="7" propertiesclass="TDiagramMetaTableProperties" objectname="churches_have_addresses">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="510" top="320" width="190" height="80"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="8" propertiesclass="TDiagramForeignKeyProperties" objectname="churches_have_addresses.churches_have_addresses_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="144" top="144" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="605" y="360"/>
+                <Point x="610" y="150"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="9" propertiesclass="TDiagramForeignKeyProperties" objectname="churches_have_addresses.churches_have_addresses_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="160" top="160" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="605" y="360"/>
+                <Point x="585" y="512"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="10" propertiesclass="TDiagramMetaTableProperties" objectname="people">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="30" top="770" width="170" height="140"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="11" propertiesclass="TDiagramMetaTableProperties" objectname="people_have_users">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="40" top="220" width="150" height="100"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="12" propertiesclass="TDiagramForeignKeyProperties" objectname="people_have_users.people_have_users_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="208" top="208" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="115" y="270"/>
+                <Point x="115" y="841"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="13" propertiesclass="TDiagramForeignKeyProperties" objectname="people_have_users.people_have_users_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="224" top="224" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="115" y="270"/>
+                <Point x="110" y="160"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="14" propertiesclass="TDiagramMetaTableProperties" objectname="churches_have_people">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="210" top="220" width="260" height="100"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="15" propertiesclass="TDiagramForeignKeyProperties" objectname="churches_have_people.churches_have_people_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="256" top="256" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="340" y="270"/>
+                <Point x="610" y="150"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="16" propertiesclass="TDiagramForeignKeyProperties" objectname="churches_have_people.churches_have_people_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="272" top="272" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="260" y="319"/>
+                <Point x="120" y="840"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="17" propertiesclass="TDiagramMetaTableProperties" objectname="people_have_addresses">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="290" top="450" width="200" height="80"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="18" propertiesclass="TDiagramForeignKeyProperties" objectname="people_have_addresses.people_have_addresses_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="304" top="304" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="290" y="500"/>
+                <Point x="120" y="840"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="20" propertiesclass="TDiagramForeignKeyProperties" objectname="people_have_addresses.people_have_addresses_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="320" top="320" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="490" y="490"/>
+                <Point x="590" y="520"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="21" propertiesclass="TDiagramMetaTableProperties" objectname="churches_have_roles">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="290" top="340" width="200" height="94"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="22" propertiesclass="TDiagramForeignKeyProperties" objectname="churches_have_roles.churches_have_roles_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="352" top="352" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="440" y="370"/>
+                <Point x="610" y="150"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="23" propertiesclass="TDiagramForeignKeyProperties" objectname="churches_have_roles.churches_have_roles_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="368" top="368" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="290" y="380"/>
+                <Point x="120" y="840"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="24" propertiesclass="TDiagramMetaTableProperties" objectname="giving_records">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="720" top="590" width="150" height="100"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="25" propertiesclass="TDiagramMetaTableProperties" objectname="people_have_giving_records">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="290" top="550" width="200" height="100"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="26" propertiesclass="TDiagramForeignKeyProperties" objectname="people_have_giving_records.people_have_giving_records_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="416" top="416" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="290" y="600"/>
+                <Point x="120" y="840"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="27" propertiesclass="TDiagramForeignKeyProperties" objectname="people_have_giving_records.people_have_giving_records_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="432" top="432" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="440" y="640"/>
+                <Point x="800" y="640"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="28" propertiesclass="TDiagramMetaTableProperties" objectname="services">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="980" top="360" width="200" height="97"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="29" propertiesclass="TDiagramMetaTableProperties" objectname="churches_have_services">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="780" top="110" width="200" height="80"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="30" propertiesclass="TDiagramForeignKeyProperties" objectname="churches_have_services.churches_have_services_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="480" top="480" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="880" y="150"/>
+                <Point x="610" y="150"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="31" propertiesclass="TDiagramForeignKeyProperties" objectname="churches_have_services.churches_have_services_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="496" top="496" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="880" y="150"/>
+                <Point x="1080" y="410"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="32" propertiesclass="TDiagramMetaTableProperties" objectname="preachers">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="710" top="800" width="200" height="97"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="33" propertiesclass="TDiagramForeignKeyProperties" objectname="preachers.preachers_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="528" top="528" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="730" y="890"/>
+                <Point x="130" y="790"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="34" propertiesclass="TDiagramMetaTableProperties" objectname="sermons">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="890" top="520" width="180" height="90"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="35" propertiesclass="TDiagramForeignKeyProperties" objectname="sermons.sermons_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="560" top="560" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="900" y="610"/>
+                <Point x="900" y="810"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="36" propertiesclass="TDiagramForeignKeyProperties" objectname="sermons.sermons_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="576" top="576" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1030" y="550"/>
+                <Point x="1030" y="450"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="37" propertiesclass="TDiagramMetaTableProperties" objectname="singing_groups">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1170" top="1030" width="200" height="83"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="38" propertiesclass="TDiagramMetaTableProperties" objectname="singing_groups_have_people">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="830" top="1030" width="200" height="80"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="39" propertiesclass="TDiagramForeignKeyProperties" objectname="singing_groups_have_people.singing_groups_have_people_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="624" top="624" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="930" y="1070"/>
+                <Point x="1270" y="1070"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="40" propertiesclass="TDiagramForeignKeyProperties" objectname="singing_groups_have_people.singing_groups_have_people_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="640" top="640" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="890" y="1050"/>
+                <Point x="190" y="800"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="41" propertiesclass="TDiagramMetaTableProperties" objectname="special_songs">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1220" top="360" width="200" height="139"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="42" propertiesclass="TDiagramForeignKeyProperties" objectname="special_songs.special_songs_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="672" top="672" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1360" y="499"/>
+                <Point x="1360" y="1030"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="43" propertiesclass="TDiagramForeignKeyProperties" objectname="special_songs.special_songs_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="688" top="688" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1320" y="410"/>
+                <Point x="1080" y="410"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="44" propertiesclass="TDiagramMetaTableProperties" objectname="media">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1120" top="890" width="200" height="111"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="45" propertiesclass="TDiagramMetaTableProperties" objectname="sermons_have_media">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="880" top="910" width="200" height="80"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="46" propertiesclass="TDiagramForeignKeyProperties" objectname="sermons_have_media.sermons_have_media_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="736" top="736" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="980" y="950"/>
+                <Point x="980" y="570"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="47" propertiesclass="TDiagramForeignKeyProperties" objectname="sermons_have_media.sermons_have_media_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="752" top="752" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="980" y="950"/>
+                <Point x="1220" y="950"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="48" propertiesclass="TDiagramMetaTableProperties" objectname="services_have_media">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1010" top="780" width="200" height="66"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="49" propertiesclass="TDiagramForeignKeyProperties" objectname="services_have_media.services_have_media_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="784" top="784" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1090" y="810"/>
+                <Point x="1080" y="410"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="50" propertiesclass="TDiagramForeignKeyProperties" objectname="services_have_media.services_have_media_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="800" top="800" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1130" y="830"/>
+                <Point x="1130" y="910"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="51" propertiesclass="TDiagramMetaTableProperties" objectname="special_songs_have_media">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="1130" top="660" width="200" height="80"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="52" propertiesclass="TDiagramForeignKeyProperties" objectname="special_songs_have_media.special_songs_have_media_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="832" top="832" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1250" y="700"/>
+                <Point x="1250" y="480"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="53" propertiesclass="TDiagramForeignKeyProperties" objectname="special_songs_have_media.special_songs_have_media_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="848" top="848" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="1250" y="700"/>
+                <Point x="1250" y="960"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="54" propertiesclass="TDiagramMetaTableProperties" objectname="churches_have_giving_records">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="720" top="320" width="200" height="80"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="55" propertiesclass="TDiagramForeignKeyProperties" objectname="churches_have_giving_records.churches_have_giving_records_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="880" top="880" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="820" y="360"/>
+                <Point x="610" y="150"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="56" propertiesclass="TDiagramForeignKeyProperties" objectname="churches_have_giving_records.churches_have_giving_records_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="896" top="896" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="800" y="370"/>
+                <Point x="800" y="640"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="19" propertiesclass="TDiagramMetaTableProperties" objectname="relationships">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="80" top="990" width="200" height="125"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="57" propertiesclass="TDiagramForeignKeyProperties" objectname="relationships.relationship_fk_1">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="912" top="912" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="120" y="1000"/>
+                <Point x="120" y="880"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="58" propertiesclass="TDiagramForeignKeyProperties" objectname="relationships.relationship_fk_2">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="928" top="928" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="160" y="1000"/>
+                <Point x="160" y="870"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+    </Elements>
+    <Surface zoom="120" scrollx="835" scrolly="0"/>
+  </TDBADiagramController>
+</XMLDiagram>

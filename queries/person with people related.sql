@@ -1,4 +1,4 @@
-#This query retreives all of the relationships for the user id specified
+#This query retreives all of the relationships for the person_id specified
 SELECT
   first_person.first_name,
   first_person.last_name,

@@ -1,0 +1,30 @@
+A query to get all of the sisters and brothers of a person. This includes only siblings that share the same set of parents.
+
+Sibling: A child, excluding myself, of my father and mother
+
+SELECT
+  sibling.first_name,
+  IF(sibling.gender='Female','Sister','Brother') AS relationship
+FROM
+  people AS self
+  INNER JOIN progeny AS father_link ON (self.person_id=father_link.child_id)
+  INNER JOIN progeny AS mother_link ON (self.person_id=mother_link.child_id)
+  INNER JOIN people AS father ON (father_link.person_id=father.person_id)
+  INNER JOIN people AS mother ON (mother_link.person_id=mother.person_id)
+  INNER JOIN progeny AS sibling_link_1 ON (sibling_link_1.person_id=father_link.person_id)
+  INNER JOIN progeny AS sibling_link_2 ON (sibling_link_2.person_id=mother_link.person_id)
+  INNER JOIN people AS sibling ON (sibling_link_1.child_id=sibling.person_id AND sibling_link_2.child_id=sibling.person_id)
+WHERE
+  self.person_id='1' AND
+  #sibling.gender='Male' AND
+  sibling.person_id!=self.person_id AND
+  (
+    (
+      father.gender='Male' AND
+      mother.gender='Female'
+    ) OR
+    (
+      father.gender IS NULL AND
+      father.person_id=mother.person_id
+    )
+  )

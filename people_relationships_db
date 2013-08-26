@@ -1,0 +1,25 @@
+Here are the basic tables that are needed to store people and how they relate to one another
+
+Table: people
+
++-----------+--------+------------+-----------+--------------+-------------+---------------+---------------+
+| person_id | gender | first_name | last_name | display_name | maiden_name | date_of_birth | date_of_death |
++-----------+--------+------------+-----------+--------------+-------------+---------------+---------------+
+
+Table: progeny
+
++-----------+----------+
+| parent_id | child_id |
++-----------+----------+
+
+Table: spouses
+
++-----------+-----------+---------+----------+
+| person_id | spouse_id | current | wed_date |
++-----------+-----------+---------+----------+
+
+Notes:
+
+ - A person with a gender of NULL is an unkown set of parents who may only have a last name
+ - If only one parent in a family is known with children then the other parnt will be recorded with the opposide gender and other fields NULL
+ - All fields can be NULL excpet people.person_id, progeny.parent_id, progeny.child_id, spouses.person_id, spouses.spouse_id

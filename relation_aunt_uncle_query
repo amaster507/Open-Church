@@ -1,4 +1,4 @@
-# A query to get all of the (Primary) aunts and uncles of a person. 
+# A query to get all of the aunts and uncles of a person. 
 # This includes only aunts/uncles that share one of the persons grandparents as their parent.
 #
 # Aunt/Uncle (Primary): A Female/Male Child, exluding my parents, of one of my parent's parents

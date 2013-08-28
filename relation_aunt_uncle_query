@@ -1,0 +1,27 @@
+# A query to get all of the (Primary) aunts and uncles of a person. 
+# This includes only aunts/uncles that share one of the persons grandparents as their parent.
+#
+# Aunt/Uncle (Primary): A Female/Male Child, exluding my parents, of one of my parent's parents
+#
+###########################################################################################
+
+SELECT
+	aunt_uncle.first_name,
+	aunt_uncle.last_name,
+	IF(aunt_uncle.gender='Female','Aunt','Uncle') AS relationship,
+	self.first_name
+FROM
+	people AS self
+	INNER JOIN progeny AS my_parent ON
+	  self.person_id=my_parent.child_id
+	INNER JOIN progeny AS their_parent ON
+	  my_parent.person_id=their_parent.child_id
+	INNER JOIN progeny AS their_child ON
+	  their_parent.person_id=their_child.person_id AND
+	  their_child.child_id!=my_parent.person_id
+	INNER JOIN people AS aunt_uncle ON
+	  their_child.child_id=aunt_uncle.person_id
+WHERE
+	self.person_id='1'
+GROUP BY
+	aunt_uncle.person_id

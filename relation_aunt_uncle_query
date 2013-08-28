@@ -10,8 +10,7 @@
 SELECT
 	aunt_uncle.first_name,
 	aunt_uncle.last_name,
-	IF(aunt_uncle.gender='Female','Aunt','Uncle') AS relationship,
-	self.first_name
+	IF(aunt_uncle.gender='Female','Aunt','Uncle') AS relationship
 FROM
 	people AS self
 	INNER JOIN progeny AS my_parent ON

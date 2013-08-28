@@ -1,25 +1,70 @@
-Here are the basic tables that are needed to store people and how they relate to one another
+#####################################################################################################################################################
+# Here are the basic tables that are needed to store people and how they relate to one another                                                      #
+#                                                                                                                                                   #
+# Table: people                                                                                                                                     #
+#                                                                                                                                                   #
+# +-----------+--------+------------+-----------+--------------+-------------+---------------+---------------+                                      #
+# | person_id | gender | first_name | last_name | display_name | maiden_name | date_of_birth | date_of_death |                                      #
+# +-----------+--------+------------+-----------+--------------+-------------+---------------+---------------+                                      #
+#                                                                                                                                                   #
+# Table: progeny                                                                                                                                    #
+#                                                                                                                                                   #
+# +-----------+----------+                                                                                                                          #
+# | parent_id | child_id |                                                                                                                          #
+# +-----------+----------+                                                                                                                          #
+#                                                                                                                                                   #
+# Table: spouses                                                                                                                                    #
+#                                                                                                                                                   #
+# +-----------+-----------+---------+----------+                                                                                                    #
+# | person_id | spouse_id | current | wed_date |                                                                                                    #
+# +-----------+-----------+---------+----------+                                                                                                    #
+#                                                                                                                                                   #
+# Notes:                                                                                                                                            #
+#                                                                                                                                                   #
+#  - A person with a gender of NULL is an unkown set of parents who may only have a last name                                                       #
+#  - If only one parent in a family is known with children then the other parnt will be recorded with the opposide gender and other fields NULL     #
+#  - All fields can be NULL excpet people.person_id, progeny.parent_id, progeny.child_id, spouses.person_id, spouses.spouse_id                      #
+#####################################################################################################################################################
 
-Table: people
+SET FOREIGN_KEY_CHECKS=0;
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
-+-----------+--------+------------+-----------+--------------+-------------+---------------+---------------+
-| person_id | gender | first_name | last_name | display_name | maiden_name | date_of_birth | date_of_death |
-+-----------+--------+------------+-----------+--------------+-------------+---------------+---------------+
+CREATE TABLE IF NOT EXISTS `people` (
+  `person_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `gender` enum('Male','Female') DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `middle_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `suffix` varchar(10) DEFAULT NULL,
+  `maiden_name` varchar(45) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `date_of_death` date DEFAULT NULL,
+  PRIMARY KEY (`person_id`),
+  KEY `gender` (`gender`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
-Table: progeny
+CREATE TABLE IF NOT EXISTS `progeny` (
+  `person_id` int(11) unsigned NOT NULL,
+  `child_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`person_id`,`child_id`),
+  KEY `child_id` (`child_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-+-----------+----------+
-| parent_id | child_id |
-+-----------+----------+
+CREATE TABLE IF NOT EXISTS `spouses` (
+  `person_id` int(11) unsigned NOT NULL COMMENT 'person id for the person',
+  `spouse_id` int(11) unsigned NOT NULL COMMENT 'person id for the spouse',
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `wed_date` date DEFAULT NULL,
+  PRIMARY KEY (`person_id`,`spouse_id`),
+  KEY `spouse_id` (`spouse_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-Table: spouses
+ALTER TABLE `progeny`
+  ADD CONSTRAINT `progeny_ibfk_1` FOREIGN KEY (`person_id`) REFERENCES `people` (`person_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `progeny_ibfk_2` FOREIGN KEY (`child_id`) REFERENCES `people` (`person_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-+-----------+-----------+---------+----------+
-| person_id | spouse_id | current | wed_date |
-+-----------+-----------+---------+----------+
-
-Notes:
-
- - A person with a gender of NULL is an unkown set of parents who may only have a last name
- - If only one parent in a family is known with children then the other parnt will be recorded with the opposide gender and other fields NULL
- - All fields can be NULL excpet people.person_id, progeny.parent_id, progeny.child_id, spouses.person_id, spouses.spouse_id
+ALTER TABLE `spouses`
+  ADD CONSTRAINT `spouses_ibfk_1` FOREIGN KEY (`person_id`) REFERENCES `people` (`person_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `spouses_ibfk_2` FOREIGN KEY (`spouse_id`) REFERENCES `people` (`person_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+SET FOREIGN_KEY_CHECKS=1;

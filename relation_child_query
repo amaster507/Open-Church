@@ -1,0 +1,19 @@
+#################################################################################################################
+# A query to get the children of a person.                                                                        #
+#                                                                                                               #
+# Daughter/Son: A Female/Male child of a person                                                                #
+#################################################################################################################
+
+#Daughter/Son
+SELECT
+	child.first_name,
+	child.last_name,
+	IF(child.gender='Female','Daughter','Son') AS relationship
+FROM
+  people AS self
+	INNER JOIN progeny AS child_link ON
+	  self.person_id=child_link.person_id
+	INNER JOIN people AS child ON
+	  child.person_id=child_link.child_id
+WHERE
+	self.person_id='1'

@@ -1,0 +1,19 @@
+##########################################################
+# A query to get the parents of a person.                #
+#                                                        #
+# Mother/Father: A Female/Male parent of a person        #
+##########################################################
+
+#Mother/Father
+SELECT
+	parent.first_name,
+	parent.last_name,
+	IF(parent.gender='Female','Mother','Father') AS relationship
+FROM
+	people AS self
+	INNER JOIN progeny AS parent_link ON
+	  parent_link.child_id=self.person_id
+	INNER JOIN people AS parent ON
+	  parent.person_id=parent_link.person_id
+WHERE
+	self.person_id='1'

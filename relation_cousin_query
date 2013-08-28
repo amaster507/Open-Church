@@ -1,0 +1,59 @@
+####################################################################################################################
+# A query to get all of the cousins of a person.                                                                   #
+#                                                                                                                  #
+# Cousin (Primary): A child of the child, exluding my parents, of one of my parent's parents                       #
+# Cousin (Secondary): A child of the current spouse of a child, exluding my parents, of one of my parent's parents #
+#                                                                                                                  #
+####################################################################################################################
+
+#Cousin (Primary)
+SELECT
+	cousin.first_name,
+	cousin.last_name,
+	'Cousin' AS relationship
+FROM
+	people AS self
+	INNER JOIN progeny AS my_parent ON
+	  self.person_id=my_parent.child_id
+	INNER JOIN progeny AS their_parent ON
+	  my_parent.person_id=their_parent.child_id
+	INNER JOIN progeny AS aunt_uncle_link ON
+	  their_parent.person_id=aunt_uncle_link.person_id AND
+	  aunt_uncle_link.child_id!=my_parent.person_id
+	INNER JOIN progeny AS cousin_link ON
+	  aunt_uncle_link.child_id=cousin_link.person_id
+	INNER JOIN people AS cousin ON
+	  cousin_link.child_id=cousin.person_id
+WHERE
+	self.person_id='1'
+UNION ALL
+#Cousin (Secondary)
+SELECT
+	cousin.first_name,
+	cousin.last_name,
+	'Cousin' AS relationship
+FROM
+	people AS self
+	INNER JOIN progeny AS my_parent ON
+	  self.person_id=my_parent.child_id
+	INNER JOIN progeny AS their_parent ON
+	  my_parent.person_id=their_parent.child_id
+	INNER JOIN progeny AS aunt_uncle_link ON
+	  their_parent.person_id=aunt_uncle_link.person_id AND
+	  aunt_uncle_link.child_id!=my_parent.person_id
+	INNER JOIN spouses AS their_spouse ON
+	  (aunt_uncle_link.child_id=their_spouse.person_id OR
+	    aunt_uncle_link.child_id=their_spouse.spouse_id
+	  ) AND
+	  their_spouse.active=1
+	INNER JOIN progeny AS cousin_link ON
+	  (their_spouse.spouse_id=cousin_link.person_id OR
+	    their_spouse.person_id=cousin_link.person_id
+	  ) AND
+	  cousin_link.person_id!=aunt_uncle_link.child_id
+	INNER JOIN people AS cousin ON
+	  cousin_link.child_id=cousin.person_id
+WHERE
+	self.person_id='1'
+GROUP BY
+	cousin.person_id

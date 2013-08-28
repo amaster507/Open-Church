@@ -2,9 +2,11 @@
 # This includes only aunts/uncles that share one of the persons grandparents as their parent.
 #
 # Aunt/Uncle (Primary): A Female/Male Child, exluding my parents, of one of my parent's parents
+# Aunt/Uncle (Secondary): A Female/Male Spouse of a child, exluding my parents, of one of my parent's parents
 #
 ###########################################################################################
 
+#Aunt/Uncle (Primary)
 SELECT
 	aunt_uncle.first_name,
 	aunt_uncle.last_name,
@@ -21,6 +23,34 @@ FROM
 	  their_child.child_id!=my_parent.person_id
 	INNER JOIN people AS aunt_uncle ON
 	  their_child.child_id=aunt_uncle.person_id
+WHERE
+	self.person_id='1'
+UNION ALL
+#Aunt/Uncle (Secondary)
+SELECT
+	aunt_uncle.first_name,
+	aunt_uncle.last_name,
+	IF(aunt_uncle.gender='Female','Aunt','Uncle') AS relationship,
+	self.first_name
+FROM
+	people AS self
+	INNER JOIN progeny AS my_parent ON
+	  self.person_id=my_parent.child_id
+	INNER JOIN progeny AS their_parent ON
+	  my_parent.person_id=their_parent.child_id
+	INNER JOIN progeny AS their_child ON
+	  their_parent.person_id=their_child.person_id AND
+	  their_child.child_id!=my_parent.person_id
+	INNER JOIN spouses AS their_spouse ON
+	  (their_child.child_id=their_spouse.person_id OR
+	    their_child.child_id=their_spouse.spouse_id
+	  ) AND
+	  their_spouse.active=1
+	INNER JOIN people AS aunt_uncle ON
+	  (their_spouse.spouse_id=aunt_uncle.person_id OR
+	    their_spouse.person_id=aunt_uncle.person_id
+	  ) AND
+	  aunt_uncle.person_id!=their_child.child_id
 WHERE
 	self.person_id='1'
 GROUP BY

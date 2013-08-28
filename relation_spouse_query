@@ -1,0 +1,24 @@
+#################################################################################################################
+# A query to get the spouse of a person.                                                                        #
+#                                                                                                               #
+# Wife/Husband: A Female/Male spouse of a person                                                                #
+#################################################################################################################
+
+#Spouse
+SELECT
+	spouse.first_name,
+	spouse.last_name,
+	IF(spouse.gender='Female','Wife','Husband') AS relationship
+FROM
+  people AS self
+	INNER JOIN spouses AS spouse_link ON
+	  self.person_id=spouse_link.person_id OR
+	  self.person_id=spouse_link.spouse_id
+	INNER JOIN people AS spouse ON
+	  (spouse.person_id=spouse_link.spouse_id OR
+	    spouse.person_id=spouse_link.person_id
+	  ) AND
+	  spouse.person_id!=self.person_id AND
+	  spouse_link.active='1'
+WHERE
+	self.person_id='1'

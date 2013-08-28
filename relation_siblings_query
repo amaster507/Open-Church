@@ -1,7 +1,12 @@
-A query to get all of the sisters and brothers of a person. This includes only siblings that share the same set of parents.
+######################################################################################################
+# A query to get all of the sisters and brothers of a person.                                        #
+# This includes only siblings that share the same set of parents.                                    #
+# Note: If person's gender IS NULL then that person represents a set of unknwon parents              #
+#                                                                                                    #
+# Sibling: A child, excluding myself, of my father and mother                                        #
+######################################################################################################
 
-Sibling: A child, excluding myself, of my father and mother
-
+#Siblings
 SELECT
   sibling.first_name,
   sibling.last_name,

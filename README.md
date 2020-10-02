@@ -12,3 +12,9 @@ This project is currently in the Idea gathering stage. So please be sure to add 
 Languages/Extensions that will be utilized in this application include but not limited to: PHP, MySQL, Javascript, jQuery, FPDF
 
 If you would like to be added or removed as a Collaborator on this projuct please let me know.
+
+---
+
+# UPDATE:
+
+This project is being sidelined for the upcoming release of MissionBase which will soon evolve into a Church Management System.
